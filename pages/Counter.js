@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native'
 import { useSelector, useDispatch } from 'react-redux'
 import { decrement, increment } from '../redux/counter/counterSlice'
@@ -13,19 +14,23 @@ export default function Counter() {
   const handleDecrement = () => {
     dispatch(decrement());
   };
+
+  useEffect(() => {
+    console.log('count has changed!')
+  }, [count])
  
   return (
     <View style={styles.container}>
       <Text style={styles.title_text}>Counter App Pedro!</Text>
       <Text style={styles.counter_text}>{count}</Text>
  
-      <TouchableOpacity onPress={() => handleIncrement} 
+      <TouchableOpacity onPress={handleIncrement} 
         style={styles.btn}>
         <Text style={styles.btn_text}> Increment </Text>
       </TouchableOpacity>
  
       <TouchableOpacity
-        onPress={() => handleDecrement}
+        onPress={handleDecrement}
         style={{ ...styles.btn, backgroundColor: '#6e3b3b' }}>
         <Text style={styles.btn_text}> Decrement </Text>
       </TouchableOpacity>

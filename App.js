@@ -1,5 +1,6 @@
 import { StyleSheet } from 'react-native';
 import Counter from './pages/Counter'
+import Goals from './pages/Goals'
 
 import { store } from './redux/store'
 import { Provider } from 'react-redux'
@@ -7,7 +8,8 @@ import { Provider } from 'react-redux'
 export default function App() {
   return (
     <Provider store={store}>
-      <Counter />
+      {/* <Counter /> */}
+      <Goals/>
     </Provider>
   );
 }
