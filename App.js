@@ -1,6 +1,5 @@
 import { StyleSheet } from 'react-native';
-import Counter from './pages/Counter'
-import Goals from './pages/Goals'
+import Goals from './components/Goals'
 
 import { store } from './redux/store'
 import { Provider } from 'react-redux'
