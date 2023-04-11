@@ -15,7 +15,7 @@ function GoalItem({text, onDeleteItem, id}) {
             >
                 <Text style={styles.goalText}> {text} </Text>
             </Pressable>
-        </View> 
+        </View>             
 
     );
 }
