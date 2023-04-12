@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { StyleSheet, View, TextInput, Button, Modal } from "react-native"
+import { StyleSheet, View, TextInput, Button, Modal, Image } from "react-native"
 
 
 const GoalInput = ({onAddGoal, visible, endAddGoal}) => {
@@ -16,8 +16,8 @@ const GoalInput = ({onAddGoal, visible, endAddGoal}) => {
 
     return(
         <Modal visible={visible} animationType="slide">
-
             <View style={styles.inputContainer}>
+                <Image style={styles.image} source={require('../assets/images/splash.png')}/>
                 <TextInput 
                     style={styles.textInput}
                     placeholder="Your course goal!"
@@ -27,10 +27,10 @@ const GoalInput = ({onAddGoal, visible, endAddGoal}) => {
 
                 <View style={styles.buttonContainer}>
                     <View style={styles.button}>
-                        <Button title="Add Goal" onPress={addGoalHandler}/>
+                        <Button title="Add Goal" onPress={addGoalHandler} color="white"/>
                     </View>
                     <View style={styles.button}>
-                        <Button title="Cancel" onPress={endAddGoal}/>
+                        <Button title="Cancel" onPress={endAddGoal} color="white"/>
                     </View>
                 </View>
             </View>
@@ -44,27 +44,32 @@ export default GoalInput
 const styles = StyleSheet.create({
     inputContainer: {
         flex: 1,
-        flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
         marginBottom: 24,
         padding: 16,
-        borderBottomWidth: 1,
-        borderBottomColor: 'blue'
-      },    
-      textInput: {
+        backgroundColor: 'blue'
+    },    
+    image: {
+        width: 300,
+        height: 300
+    },
+    textInput: {
         borderWidth: 1,
-        borderColor: 'blue',
+        backgroundColor: 'white',
+        borderColor: 'white',
+        color: 'black',
+        borderRadius: 6,
         width: '100%',
-        // marginRight: 8,
-        padding: 8
-      },
-      buttonContainer: {
+        padding: 16
+    },
+    buttonContainer: {
         flexDirection: 'row',
         marginTop: 16
-      },
-      button: {
+    },
+    button: {
         width: 100,
-        marginHorizontal: 8
-      }
+        marginHorizontal: 8,
+        color: 'white'
+    }
 })
